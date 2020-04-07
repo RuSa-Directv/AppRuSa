@@ -1,0 +1,9 @@
+Nuevas Instalaciones apenas se creo maquina: 07-04
+
+npm install @material-ui/core
+npm install @material-ui/icons
+npm install --save react-router-dom
+
+
+
+

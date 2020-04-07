@@ -1,7 +1,7 @@
 import React from 'react';
-import './Styles/App.css';
-import logo from "./Img/dtv.png";
-import Header from "./Components/Header"
+import '../Styles/App.css';
+import logo from '../Img/dtv.png';
+import Header from "./Header"
 
 
 function Inicio() {
