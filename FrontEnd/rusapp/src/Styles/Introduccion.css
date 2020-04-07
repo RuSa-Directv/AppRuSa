@@ -1,0 +1,41 @@
+.container{
+    text-align:center;
+  
+  }
+  
+  .left{
+    float: left;
+    display:inline-block;
+  }
+  .right{
+    float: right;
+    display:inline-block;
+  }
+  .center{
+  
+   display:inline-block;
+  }
+
+  .destacado {
+    margin-left: 2em;
+    color: blue ;
+    font-size:120%;
+    margin-right: 2em;
+  }
+
+  .foto{
+    height: 5vmin;
+    margin-right: 2em;
+  }
+  
+  .mundo {
+    height: 30vmin;
+    pointer-events: none;
+    
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .mundo {
+      animation: App-logo-spin infinite 20s linear;
+    }
+  }

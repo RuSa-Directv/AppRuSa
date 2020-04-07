@@ -41,7 +41,7 @@ const StyledMenuItem = withStyles((theme) => ({
   },
 }))(MenuItem);
 
-function CustomizedMenus() {
+function DesplegableMenu() {
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleClick = (event) => {
@@ -106,5 +106,6 @@ function CustomizedMenus() {
       </div>
       );
 }
-export default CustomizedMenus;
+export default  DesplegableMenu;
+    ;
    

@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function ButtonAppBar() {
+function Header() {
   const classes = useStyles();
 
   return (
@@ -41,4 +41,4 @@ function ButtonAppBar() {
   );
 }
 
-export default ButtonAppBar;
+export default Header;
