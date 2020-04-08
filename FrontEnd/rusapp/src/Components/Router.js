@@ -5,6 +5,8 @@ import Header from "./Header";
 import Inicio from "./Inicio";
 import Introduccion from "./Introduccion";
 import Tabla from "./Tabla"
+import Buscador from "./Buscador"
+import Principal from "./Principal";
 
 
 const Router =() => (
@@ -15,7 +17,8 @@ const Router =() => (
     <Route exact path="/Inicio" component={Inicio}/>
     <Route exact path="/Introduccion" component={Introduccion}/>
     <Route exact path="/Tabla" component={Tabla}/>
-
+    <Route exact path="/Buscador" component={Buscador}/>
+    <Route exact path="/Principal" component={Principal}/>
     </Switch>
     </BrowserRouter>
     
