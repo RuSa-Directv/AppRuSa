@@ -34,7 +34,7 @@ function Header() {
           <IconButton ><Desplegablemenu></Desplegablemenu>
             </IconButton>
             <Typography variant="h6" className={classes.title}>
-           <Button className="titulo3" href="Pantalla1" color="inherit"><font size="5"> Catalogo de Servicio </font></Button>
+           <Button className="titulo3" href="Principal" color="inherit"><font size="5"> Catalogo de Servicio </font></Button>
            </Typography>
           <Button href="./Login"   color="inherit">Login</Button>
         </Toolbar>

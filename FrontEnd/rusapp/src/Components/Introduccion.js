@@ -4,7 +4,6 @@ import '../Styles/Introduccion.css';
 import Header from "./Header";
 import mundo from '../Img/corte.png';
 import Button from '@material-ui/core/Button';
-import Tabla from "./Tabla";
 import ar from "../Img/AR.png";
 import co from "../Img/CO.png";
 import ec from "../Img/EC.png";
@@ -45,7 +44,7 @@ function Introduccion() {
         </div>
         <div  >
         <br></br><h1 class="destacado" > Tablero de Disponibilidad </h1>
-        <Tabla></Tabla>
+        
         </div>
         </body>
         </div >

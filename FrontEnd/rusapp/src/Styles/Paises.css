@@ -1,0 +1,73 @@
+.titulo3{
+    text-align:center;
+  
+  }
+
+  .container{
+    text-align:center;
+  
+  }
+  
+  .left{
+    float: left;
+    display:inline-block;
+  }
+  .right{
+    float: right;
+    display:inline-block;
+  }
+  .center{
+    
+    align-items: center;
+    justify-content: center;
+  }
+
+  .tables{
+    margin-top: 15vmin;
+  }
+
+.bandera{
+    
+    
+  pointer-events: none;
+
+
+ 
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .banderitas {
+      animation: App-logo-spin infinite 20s linear;
+    }
+  }
+
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .dtvpaises{
+    
+    height: 15vmin;
+ 
+}
+.espacio{
+    margin-top: 10vmin;
+  }
+
+
+  .fondoar {
+    background-image: url("../Img/arfondo.jpg");
+    font-weight: 600;
+    background-size:100% 100%;
+  }
+
+  .banderita{
+    height: 10vmin;
+    margin-top: 3vmin;
+    
+  }

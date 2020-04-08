@@ -4,7 +4,6 @@ import '../Styles/Introduccion.css';
 import Header from "./Header";
 import mundo from '../Img/corte.png';
 import Button from '@material-ui/core/Button';
-import Tabla from "./Tabla";
 import ar from "../Img/AR.png";
 import co from "../Img/CO.png";
 import ec from "../Img/EC.png";
@@ -15,7 +14,8 @@ import ve from "../Img/VE.png";
 import pr from "../Img/PR.png";
 import ca from "../Img/CA.png";
 import logo from '../Img/dtv.png';
-import Buscador from "./Buscador"
+import Buscador from "./Buscador";
+import Argentina from "./Argentina";
 
 function Prueba() {
     return (
@@ -27,7 +27,7 @@ function Prueba() {
         <Buscador></Buscador>
         </div>
         <br/>
-        <Button href="#" ><img class="foto" src={ar} /></Button>
+        <Button href="Argentina" ><img class="foto" src={ar} /></Button>
         <Button href="#" ><img class="foto" src={co} /></Button>
         <Button href="#" ><img class="foto" src={ec} /></Button>
         <Button href="#" ><img class="foto" src={pe} /></Button>
