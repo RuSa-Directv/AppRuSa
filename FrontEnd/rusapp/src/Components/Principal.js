@@ -1,8 +1,6 @@
 import React from 'react';
-import Link from '@material-ui/core/Link';
 import '../Styles/Introduccion.css';
 import Header from "./Header";
-import mundo from '../Img/corte.png';
 import Button from '@material-ui/core/Button';
 import ar from "../Img/AR.png";
 import co from "../Img/CO.png";
@@ -15,7 +13,7 @@ import pr from "../Img/PR.png";
 import ca from "../Img/CA.png";
 import logo from '../Img/dtv.png';
 import Buscador from "./Buscador";
-import Argentina from "./Argentina";
+
 
 function Prueba() {
     return (
@@ -28,14 +26,14 @@ function Prueba() {
         </div>
         <br/>
         <Button href="Argentina" ><img class="foto" src={ar} /></Button>
-        <Button href="#" ><img class="foto" src={co} /></Button>
-        <Button href="#" ><img class="foto" src={ec} /></Button>
-        <Button href="#" ><img class="foto" src={pe} /></Button>
-        <Button href="#" ><img class="foto" src={uy} /></Button>
-        <Button href="#" ><img class="foto" src={ve} /></Button>
-        <Button href="#" ><img class="foto" src={pr} /></Button>
-        <Button href="#" ><img class="foto" src={ca} /></Button>
-        <Button href="#" ><img class="foto" src={cl} /></Button>
+        <Button href="Colombia" ><img class="foto" src={co} /></Button>
+        <Button href="Ecuador" ><img class="foto" src={ec} /></Button>
+        <Button href="Peru" ><img class="foto" src={pe} /></Button>
+        <Button href="Uruguay" ><img class="foto" src={uy} /></Button>
+        <Button href="Venezuela" ><img class="foto" src={ve} /></Button>
+        <Button href="Puertorico" ><img class="foto" src={pr} /></Button>
+        <Button href="Caribe" ><img class="foto" src={ca} /></Button>
+        <Button href="Chile" ><img class="foto" src={cl} /></Button>
 
        
         </div >

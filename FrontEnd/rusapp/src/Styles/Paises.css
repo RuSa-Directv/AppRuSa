@@ -71,3 +71,25 @@
     margin-top: 3vmin;
     
   }
+
+  .table {
+    border-bottom:0px !important;
+    color:white;
+    text-align: center;
+}
+.table th, .table td {
+    border: 1px !important;
+}
+.fixed-table-container {
+    border:0px !important;
+}
+
+.export{
+  background-color:red;
+  color:white;
+}
+ 
+
+  
+
+

@@ -6,7 +6,7 @@ import ToolkitProvider, { Search, CSVExport} from 'react-bootstrap-table2-toolki
 import Header from "./Header"
 import '../Styles/Paises.css';
 import dtv from "../Img/dtv.png";
-import ar from "../Img/AR.png";
+import ec from "../Img/EC.png";
 
 
 const { SearchBar } = Search;
@@ -62,7 +62,7 @@ const products = [
     
   ];
 
-function CatalogoAR() {
+function CatalogoEC() {
     return (   
         <header class="fondopaises" >
 <div class="container-fluid">
@@ -70,7 +70,7 @@ function CatalogoAR() {
     <div class="col-md-12"> 
     <Header></Header>
     </div>
-    <div class="col-md-1" > <img src={ar} className="banderita" />   </div>
+    <div class="col-md-1" > <img src={ec} className="banderita" />   </div>
     <div class="col-md-10" align="center" >
     <img src={dtv} className="dtvpaises" /> 
     <div class="col-md-1" ></div>
@@ -86,7 +86,7 @@ function CatalogoAR() {
 {
     props => (
       <div >
-        <h3 className="espacio">Catalogo de Servicio - Argentina</h3>
+        <h3 className="espacio">Catalogo de Servicio - Ecuador</h3>
         <SearchBar { ...props.searchProps } />
         <div className="table table-dark table-striped table-responsive table-hover">
         <BootstrapTable className="table"
@@ -106,4 +106,4 @@ function CatalogoAR() {
     
 }
 
-export default CatalogoAR;
+export default CatalogoEC;
