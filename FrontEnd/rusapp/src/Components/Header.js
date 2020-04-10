@@ -28,17 +28,25 @@ function Header() {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
+    <div class="container-fluid">
+    <div className={classes.root} class="row">
+    <div class="col-md-12"> 
       <AppBar position="static">
         <Toolbar>
+        <div class="col-md-1">
           <IconButton ><Desplegablemenu></Desplegablemenu>
-            </IconButton>
+            </IconButton></div>
+            <div class="col-md-10" align="center">
             <Typography variant="h6" className={classes.title} >
-           <Button className="titulo3" href="Principal" color="inherit"><font size="5"> Catalogo de Servicio </font></Button>
-           </Typography>
+           <Button  href="Principal" color="inherit"><font size="5"> Catalogo de Servicio </font></Button>
+           </Typography></div>
+           <div class="col-md-1">
           <Button href="./Login"   color="inherit">Login</Button>
+          </div>
         </Toolbar>
       </AppBar>
+    </div>
+    </div>
     </div>
   );
 }

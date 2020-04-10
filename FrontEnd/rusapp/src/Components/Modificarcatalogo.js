@@ -6,11 +6,7 @@ import ToolkitProvider, { Search, CSVExport} from 'react-bootstrap-table2-toolki
 import Header from "./Header"
 import '../Styles/Paises.css';
 import dtv from "../Img/dtv.png";
-import pr from "../Img/PR.png";
-import 'react-bootstrap-table2-filter/dist/react-bootstrap-table2-filter.min.css';
-import cellEditFactory from 'react-bootstrap-table2-editor';
-import { Type } from 'react-bootstrap-table2-editor';
-import filterFactory, { textFilter } from 'react-bootstrap-table2-filter';
+import pe from "../Img/PE.png";
 
 
 const { SearchBar } = Search;
@@ -18,13 +14,11 @@ const { ExportCSVButton } = CSVExport;
 const columns = [{
   dataField: 'pro',
   text: 'Producto',
-  sort: true,
-  filter: textFilter()
+  sort: true
 }, {
   dataField: 'ser',
   text: 'Servicio',
-  sort: true,
-
+  sort: true
 }, {
   dataField: 'app',
   text: 'Aplicacion',
@@ -68,7 +62,7 @@ const products = [
     
   ];
 
-function CatalogoPR() {
+function ModificarCatalogo() {
     return (   
         <header class="fondopaises" >
 <div class="container-fluid">
@@ -76,7 +70,7 @@ function CatalogoPR() {
     <div class="col-md-12"> 
     <Header></Header>
     </div>
-    <div class="col-md-1" > <img src={pr} className="banderita" />   </div>
+    <div class="col-md-1" > <img src={pe} className="banderita" />   </div>
     <div class="col-md-10" align="center" >
     <img src={dtv} className="dtvpaises" /> 
     <div class="col-md-1" ></div>
@@ -86,14 +80,13 @@ function CatalogoPR() {
   keyField="id"
   data={ products }
   columns={ columns }
-  cellEdit={ cellEditFactory({ mode: 'click' }) }
   search
   exportCSV
 >
 {
     props => (
       <div >
-        <h3 className="espacio">Catalogo de Servicio - Puerto Rico</h3>
+        <h3 className="espacio">Catalogo de Servicio - Peru</h3>
         <SearchBar { ...props.searchProps } />
         <div className="table table-dark table-striped table-responsive table-hover">
         <BootstrapTable className="table"
@@ -101,7 +94,7 @@ function CatalogoPR() {
         />
         </div>
         <ExportCSVButton className="export"{ ...props.csvProps }>Export CSV</ExportCSVButton>
-        </div> 
+        </div>
     )
   }
 </ToolkitProvider>
@@ -113,4 +106,4 @@ function CatalogoPR() {
     
 }
 
-export default CatalogoPR;
+export default ModificarCatalogo;

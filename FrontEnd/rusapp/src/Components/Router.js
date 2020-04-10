@@ -15,6 +15,14 @@ import Caribe from "./Caribe"
 import Uruguay from "./Uruguay"
 import Ecuador from "./Ecuador"
 
+import Certificados from "./Certificados"
+import Modificarcatalogo from "./Modificarcatalogo"
+
+
+
+
+
+
 
 const Router =() => (
     <BrowserRouter>
@@ -33,6 +41,10 @@ const Router =() => (
     <Route exact path="/Caribe" component={Caribe}/>
     <Route exact path="/Uruguay" component={Uruguay}/>
     <Route exact path="/Ecuador" component={Ecuador}/>
+    <Route exact path="/Certificados" component={Certificados}/>
+    <Route exact path="/Modificarcatalogo" component={Modificarcatalogo}/>
+
+    
 
     </Switch>
     </BrowserRouter>
