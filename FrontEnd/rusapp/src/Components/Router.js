@@ -24,6 +24,7 @@ import Basecertificado from "./Basecertificado"
 
 
 
+
 const Router =() => (
     <BrowserRouter>
     <Switch>
@@ -44,6 +45,7 @@ const Router =() => (
     <Route exact path="/Certificados" component={Certificados}/>
     <Route exact path="/Modificarcertificado" component={Modificarcertificado}/>
     <Route exact path="/Basecertificado" component={Basecertificado}/>
+  
 
     
 

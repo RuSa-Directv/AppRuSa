@@ -9,8 +9,7 @@ import dtv from "../Img/dtv.png";
 import pr from "../Img/PR.png";
 import 'react-bootstrap-table2-filter/dist/react-bootstrap-table2-filter.min.css';
 import cellEditFactory from 'react-bootstrap-table2-editor';
-import { Type } from 'react-bootstrap-table2-editor';
-import filterFactory, { textFilter } from 'react-bootstrap-table2-filter';
+
 
 
 const { SearchBar } = Search;
@@ -19,7 +18,7 @@ const columns = [{
   dataField: 'pro',
   text: 'Producto',
   sort: true,
-  filter: textFilter()
+ 
 }, {
   dataField: 'ser',
   text: 'Servicio',
