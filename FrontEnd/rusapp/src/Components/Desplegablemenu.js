@@ -5,18 +5,6 @@ import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import DraftsIcon from '@material-ui/icons/Drafts';
-import SendIcon from '@material-ui/icons/Send';
-import Argentina from "./Argentina"
-import Colombia from "./Colombia"
-import Peru from "./Peru"
-import Chile from "./Chile"
-import Puertorico from "./Puertorico"
-import Venezuela from "./Venezuela"
-import Caribe from "./Caribe"
-import Uruguay from "./Uruguay"
-import Ecuador from "./Ecuador"
 import ar from "../Img/AR.png";
 import co from "../Img/CO.png";
 import ec from "../Img/EC.png";
@@ -28,6 +16,7 @@ import pr from "../Img/PR.png";
 import ca from "../Img/CA.png";
 import mundo from "../Img/mundo.png";
 import modmundo from "../Img/modificacion.png";
+import { Divider } from '@material-ui/core';
 
 
 
@@ -101,12 +90,13 @@ function DesplegableMenu() {
           <ListItemText  primary="Ver Certificados" />
           </Button>
         </StyledMenuItem> 
+        
         <StyledMenuItem > <Button href="Modificarcertificado">
           <ListItemIcon>
           <img src={modmundo} class="desplegable" fontSize="small" /> 
           </ListItemIcon>
           <ListItemText  primary="Modificar Certificados" /> </Button>
-        </StyledMenuItem>
+        </StyledMenuItem><Divider></Divider>
         <StyledMenuItem > <Button href="Argentina">
           <ListItemIcon>
           <img src={ar} class="desplegable" fontSize="small" /> 
@@ -161,10 +151,15 @@ function DesplegableMenu() {
           </ListItemIcon>
           <ListItemText  primary="Catalogo Ecuador" /> </Button>
         </StyledMenuItem>
+        <StyledMenuItem > <Button href="Modificarcatalogo">
+          <ListItemIcon> 
+          <img src={modmundo} class="desplegable" fontSize="small" /> 
+          </ListItemIcon>
+          <ListItemText  primary="Modificar Componentes de Catalogo" /> </Button>
+        </StyledMenuItem>
       </StyledMenu>
       </div>
       );
 }
 export default  DesplegableMenu;
-    ;
-   
+    
