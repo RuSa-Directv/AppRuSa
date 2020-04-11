@@ -9,3 +9,7 @@ npm install react-bootstrap-table-next --save
 npm install react-bootstrap-dropdown-menu --save
 npm install react-bootstrap-table2-filter --save
 npm install react-bootstrap-table2-editor --save
+npm install material-table --save
+npm install @material-ui/core
+
+

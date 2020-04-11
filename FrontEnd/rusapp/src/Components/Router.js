@@ -14,9 +14,9 @@ import Venezuela from "./Venezuela"
 import Caribe from "./Caribe"
 import Uruguay from "./Uruguay"
 import Ecuador from "./Ecuador"
-
 import Certificados from "./Certificados"
-import Modificarcatalogo from "./Modificarcatalogo"
+import Modificarcertificado from "./Modificarcertificado"
+import Basecertificado from "./Basecertificado"
 
 
 
@@ -42,7 +42,8 @@ const Router =() => (
     <Route exact path="/Uruguay" component={Uruguay}/>
     <Route exact path="/Ecuador" component={Ecuador}/>
     <Route exact path="/Certificados" component={Certificados}/>
-    <Route exact path="/Modificarcatalogo" component={Modificarcatalogo}/>
+    <Route exact path="/Modificarcertificado" component={Modificarcertificado}/>
+    <Route exact path="/Basecertificado" component={Basecertificado}/>
 
     
 
