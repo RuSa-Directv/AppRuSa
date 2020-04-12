@@ -19,10 +19,6 @@ import modmundo from "../Img/modificacion.png";
 import { Divider } from '@material-ui/core';
 
 
-
-
-
-
 const StyledMenu = withStyles({
   paper: {
     border: '1px solid #d3d4d5',
@@ -137,7 +133,7 @@ function DesplegableMenu() {
           <ListItemIcon> 
           <img src={pr} class="desplegable" fontSize="small" /> 
           </ListItemIcon>
-          <ListItemText  primary="Catalogo Puerto Rico" /> </Button>
+          <ListItemText primary="Catalogo Puerto Rico" /> </Button>
         </StyledMenuItem>
         <StyledMenuItem > <Button href="Caribe">
           <ListItemIcon> 
@@ -155,7 +151,7 @@ function DesplegableMenu() {
           <ListItemIcon> 
           <img src={modmundo} class="desplegable" fontSize="small" /> 
           </ListItemIcon>
-          <ListItemText  primary="Modificar Componentes de Catalogo" /> </Button>
+          <ListItemText primary="Modificar Componentes de Catalogo" /> </Button>
         </StyledMenuItem>
       </StyledMenu>
       </div>

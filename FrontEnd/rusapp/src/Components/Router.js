@@ -22,6 +22,7 @@ import Basecatalogo from "./Basecatalogo"
 
 
 
+
 const Router =() => (
     <BrowserRouter>
     <Switch>
@@ -44,6 +45,7 @@ const Router =() => (
     <Route exact path="/Basecertificado" component={Basecertificado}/>
     <Route exact path="/Modificarcatalogo" component={Modificarcatalogo}/>
     <Route exact path="/Basecatalogo" component={Basecatalogo}/>
+
   
 
     
