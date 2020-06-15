@@ -11,7 +11,6 @@ import ec from "../Img/EC.png";
 import cl from "../Img/CL.png";
 import pe from "../Img/PE.png";
 import uy from "../Img/UY.png";
-import ve from "../Img/VE.png";
 import pr from "../Img/PR.png";
 import ca from "../Img/CA.png";
 import mundo from "../Img/mundo.png";
@@ -122,12 +121,6 @@ function DesplegableMenu() {
           <img src={pe} class="desplegable" fontSize="small" /> 
           </ListItemIcon>
           <ListItemText  primary="Catalogo Peru" /> </Button>
-        </StyledMenuItem>
-        <StyledMenuItem > <Button href="Venezuela">
-          <ListItemIcon> 
-          <img src={ve} class="desplegable" fontSize="small" /> 
-          </ListItemIcon>
-          <ListItemText  primary="Catalogo Venezuela" /> </Button>
         </StyledMenuItem>
         <StyledMenuItem > <Button href="Puertorico">
           <ListItemIcon> 

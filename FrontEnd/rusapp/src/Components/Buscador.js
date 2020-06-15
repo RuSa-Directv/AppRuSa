@@ -7,6 +7,9 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 import DirectionsIcon from '@material-ui/icons/Directions';
+import Button from '@material-ui/core/Button';
+import Buscadorgeneral from "./Buscadorgeneral"
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -36,13 +39,13 @@ function Buscador() {
       <IconButton className={classes.iconButton} aria-label="menu">
         <MenuIcon />
       </IconButton>
-      <InputBase
+      <InputBase href="Buscadorgeneral"
         className={classes.input}
         placeholder="Buscar"
         inputProps={{ 'aria-label': 'Buscar' }}
       />
-      <IconButton type="submit" className={classes.iconButton} aria-label="search">
-        <SearchIcon />
+      <IconButton href="Buscadorgeneral" type="submit" className={classes.iconButton} aria-label="search">
+        <SearchIcon  /> 
       </IconButton>
       <Divider className={classes.divider} orientation="vertical" />
 

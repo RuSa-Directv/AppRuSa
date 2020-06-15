@@ -8,7 +8,6 @@ import ec from "../Img/EC.png";
 import cl from "../Img/CL.png";
 import pe from "../Img/PE.png";
 import uy from "../Img/UY.png";
-import ve from "../Img/VE.png";
 import pr from "../Img/PR.png";
 import ca from "../Img/CA.png";
 import logo from '../Img/dtv.png';
@@ -30,7 +29,6 @@ function Prueba() {
         <Button href="Ecuador" ><img class="foto" src={ec} /></Button>
         <Button href="Peru" ><img class="foto" src={pe} /></Button>
         <Button href="Uruguay" ><img class="foto" src={uy} /></Button>
-        <Button href="Venezuela" ><img class="foto" src={ve} /></Button>
         <Button href="Puertorico" ><img class="foto" src={pr} /></Button>
         <Button href="Caribe" ><img class="foto" src={ca} /></Button>
         <Button href="Chile" ><img class="foto" src={cl} /></Button>

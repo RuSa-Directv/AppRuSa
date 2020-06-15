@@ -11,7 +11,6 @@ import co from "../Img/CO.png";
 import ec from "../Img/EC.png";
 import pe from "../Img/PE.png";
 import cl from "../Img/CL.png";
-import ve from "../Img/VE.png";
 import pr from "../Img/PR.png";
 import ca from "../Img/CA.png";
 import uy from "../Img/UY.png";
@@ -75,7 +74,6 @@ function Certificados() {
     </div>
     <div class="col-md-4" align="right" >
     <img src={pe} className="banderita" />   
-    <img src={ve} className="banderita" />
     <img src={ca} className="banderita" />
     <img src={pr} className="banderita" />
     <img src={ec} className="banderita" />

@@ -40,9 +40,9 @@ function Header() {
             <Typography variant="h6" className={classes.title} >
            <Button  href="Principal" color="inherit"><font size="5"> Catalogo de Servicio </font></Button>
            </Typography></div>
-           <div class="col-md-1">
+           {/* <div class="col-md-1">
           <Button href="./Login"   color="inherit">Login</Button>
-          </div>
+          </div> */}
         </Toolbar>
       </AppBar>
     </div>
