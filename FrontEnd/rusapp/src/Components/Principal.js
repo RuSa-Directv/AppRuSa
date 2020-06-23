@@ -15,7 +15,7 @@ import Buscador from "./Buscador";
 import Buscadorgeneral from "./Buscadorgeneral";
 import { createHashHistory } from 'history'
 
-class Prueba extends React.Component  {
+class Principal extends React.Component  {
 
     render(){
     return (
@@ -45,4 +45,4 @@ class Prueba extends React.Component  {
   }
   
   
-  export default Prueba;
+  export default Principal;

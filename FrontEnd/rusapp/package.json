@@ -9,6 +9,7 @@
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "bootstrap": "^4.4.1",
+    "glyphicons": "^0.2.0",
     "material-table": "^1.57.2",
     "mdbreact": "^4.25.6",
     "namor": "^2.0.2",

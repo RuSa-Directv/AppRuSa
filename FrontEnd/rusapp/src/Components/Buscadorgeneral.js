@@ -19,7 +19,7 @@ import uy from "../Img/UY.png";
 
 
 const { ExportCSVButton } = CSVExport;
-
+const { SearchBar } = Search;
 const columns = [{
   dataField: 'pro',
   text: 'Producto',
@@ -120,14 +120,14 @@ render() {
   keyField="id"
   data={ this.state.products }
   columns={ columns }
-  
+  search
   exportCSV ={{onlyExportFiltered: true, exportAll: false, fileName: 'Busqueda.csv'}}>
 
 {
     props => (
       <div >
         <h3 className="espacio">Resultados Encontrados: </h3>
-        
+        <SearchBar { ...props.searchProps } />
         <div className="table table-dark table-striped table-responsive table-hover">
         <BootstrapTable className="table"
           { ...props.baseProps } 

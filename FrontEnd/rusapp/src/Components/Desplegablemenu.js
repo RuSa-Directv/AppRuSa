@@ -86,12 +86,7 @@ function DesplegableMenu() {
           </Button>
         </StyledMenuItem> 
         
-        <StyledMenuItem > <Button href="Modificarcertificado">
-          <ListItemIcon>
-          <img src={modmundo} class="desplegable" fontSize="small" /> 
-          </ListItemIcon>
-          <ListItemText  primary="Modificar Certificados" /> </Button>
-        </StyledMenuItem><Divider></Divider>
+
         <StyledMenuItem > <Button href="Argentina">
           <ListItemIcon>
           <img src={ar} class="desplegable" fontSize="small" /> 
@@ -140,7 +135,7 @@ function DesplegableMenu() {
           </ListItemIcon>
           <ListItemText  primary="Catalogo Ecuador" /> </Button>
         </StyledMenuItem>
-        <StyledMenuItem > <Button href="Modificarcatalogo">
+        <StyledMenuItem > <Button href="Modificacion">
           <ListItemIcon> 
           <img src={modmundo} class="desplegable" fontSize="small" /> 
           </ListItemIcon>

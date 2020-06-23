@@ -59,3 +59,11 @@
 [0618/165054.185:ERROR:registration_protocol_win.cc(131)] TransactNamedPipe: Ha terminado la canalización. (0x6D)
 [0622/132433.933:ERROR:registration_protocol_win.cc(131)] TransactNamedPipe: Ha terminado la canalización. (0x6D)
 [0622/190124.273:ERROR:registration_protocol_win.cc(131)] TransactNamedPipe: Ha terminado la canalización. (0x6D)
+[0622/233016.833:ERROR:exit_code_watcher_win.cc(87)] Failed to wait for process exit or stop event
+[0622/233024.000:ERROR:registration_protocol_win.cc(131)] TransactNamedPipe: Ha terminado la canalización. (0x6D)
+[0623/092734.122:ERROR:exit_code_watcher_win.cc(87)] Failed to wait for process exit or stop event
+[0623/092735.565:ERROR:registration_protocol_win.cc(131)] TransactNamedPipe: Ha terminado la canalización. (0x6D)
+[0623/101704.493:ERROR:exit_code_watcher_win.cc(87)] Failed to wait for process exit or stop event
+[0623/101706.251:ERROR:registration_protocol_win.cc(131)] TransactNamedPipe: Ha terminado la canalización. (0x6D)
+[0623/102121.978:ERROR:exit_code_watcher_win.cc(87)] Failed to wait for process exit or stop event
+[0623/102124.302:ERROR:registration_protocol_win.cc(131)] TransactNamedPipe: Ha terminado la canalización. (0x6D)
