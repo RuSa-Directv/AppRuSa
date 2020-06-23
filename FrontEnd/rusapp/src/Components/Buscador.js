@@ -1,56 +1,69 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
-import InputBase from '@material-ui/core/InputBase';
-import Divider from '@material-ui/core/Divider';
+import { InputBase } from '@material-ui/core';
 import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
-import DirectionsIcon from '@material-ui/icons/Directions';
-import Button from '@material-ui/core/Button';
-import Buscadorgeneral from "./Buscadorgeneral"
+import { withRouter} from 'react-router-dom';
+
+class Buscador extends React.Component {
+  
+
+    constructor() {
+        super();
+        this.handleSubmit = this.handleSubmit.bind(this);
+        
+
+      }
 
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    padding: '2px 4px',
-    display: 'flex',
-    alignItems: 'center',
-    width: 400,
-  },
-  input: {
-    marginLeft: theme.spacing(1),
-    flex: 1,
-  },
-  iconButton: {
-    padding: 10,
-  },
-  divider: {
-    height: 28,
-    margin: 4,
-  },
-}));
 
-function Buscador() {
-  const classes = useStyles();
 
-  return (
-    <Paper component="form" className={classes.root}>
-      <IconButton className={classes.iconButton} aria-label="menu">
-        <MenuIcon />
-      </IconButton>
-      <InputBase href="Buscadorgeneral"
-        className={classes.input}
-        placeholder="Buscar"
-        inputProps={{ 'aria-label': 'Buscar' }}
-      />
-      <IconButton href="Buscadorgeneral" type="submit" className={classes.iconButton} aria-label="search">
-        <SearchIcon  /> 
-      </IconButton>
-      <Divider className={classes.divider} orientation="vertical" />
+      handleSubmit(event) {
+        event.preventDefault();
+        var t = document.getElementById("username")
+        console.log(t.value)
 
-    </Paper>
-  );
+
+        this.props.history.push({pathname: "/Buscadorgeneral", data: t.value})
+
+      }
+      
+
+    render(){
+      
+        return (
+          <Paper 
+          component="form" 
+          onSubmit={this.handleSubmit} >
+
+            <InputBase 
+            onSubmit={this.handleSubmit}
+            placeholder="  Buscar" 
+            inputProps={{ 'aria-label': '  Buscar' }}
+            id="username" 
+            name="username" 
+            type="text"
+            
+            >
+
+            </InputBase>
+
+            <IconButton 
+            
+            type="submit" 
+            aria-label="search"
+            onClick={this.handleSubmit}
+            >
+
+
+            <SearchIcon  /> 
+            </IconButton>
+
+           </Paper>
+          );
+
+    }
 }
 
-export default Buscador;
+export default withRouter( Buscador);
+

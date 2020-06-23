@@ -48,3 +48,25 @@
 {
   color: blue;
 }
+
+
+.root 
+{
+  padding: '2px 4px';
+  display: 'flex';
+  width: 400;
+  align-items: center;
+}
+.input
+{
+   flex: 1;
+}
+.iconButton
+{
+  padding: 10;
+}
+.lalala
+{
+  height: 28;
+  margin: 4;
+}

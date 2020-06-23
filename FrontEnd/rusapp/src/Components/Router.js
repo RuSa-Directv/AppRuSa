@@ -22,9 +22,12 @@ import Buscadorgeneral from "./Buscadorgeneral"
 import Login from "./Login"
 
 
+
 const Router =() => (
     <BrowserRouter>
+
     <Switch>
+        
     <Route exact path="/" component={Inicio}/>
     <Route exact path="/Header" component={Header}/>
     <Route exact path="/Inicio" component={Inicio}/>
@@ -45,6 +48,7 @@ const Router =() => (
     <Route exact path="/Basecatalogo" component={Basecatalogo}/>
     <Route exact path="/Buscadorgeneral" component={Buscadorgeneral}/>
     <Route exact path="/Login" component={Login}/>
+
     
 
   

@@ -36,7 +36,11 @@ const columns = [{
   dataField: 'du',
   text: 'Dueño',
   sort: true
-}, {
+},{
+  dataField: 'tel',
+  text: 'Telefono',
+  sort: true
+},{
   dataField: 'es1',
   text: 'Escalamiento 1',
   sort: true
@@ -73,7 +77,8 @@ class Buscadorgeneral extends React.Component {
 
     componentDidMount() 
     {
-      fetch('http://localhost:2999/search/Lucas')
+      const {data} = this.props.location
+      fetch('http://localhost:2999/search/'+data)
         .then((response) => {
           return response.json()
         })
@@ -116,7 +121,7 @@ render() {
   data={ this.state.products }
   columns={ columns }
   
-  exportCSV ={{onlyExportFiltered: true, exportAll: false, fileName: 'Caribe.csv'}}>
+  exportCSV ={{onlyExportFiltered: true, exportAll: false, fileName: 'Busqueda.csv'}}>
 
 {
     props => (

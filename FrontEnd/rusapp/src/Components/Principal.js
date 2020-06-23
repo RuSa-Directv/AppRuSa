@@ -12,15 +12,18 @@ import pr from "../Img/PR.png";
 import ca from "../Img/CA.png";
 import logo from '../Img/dtv.png';
 import Buscador from "./Buscador";
+import Buscadorgeneral from "./Buscadorgeneral";
+import { createHashHistory } from 'history'
 
+class Prueba extends React.Component  {
 
-function Prueba() {
+    render(){
     return (
         <body class="fondo" extends Component> 
         <div class="container">
         <Header></Header>
         <img src={logo} class="center" />  <br></br>
-        <div class="center">
+        <div class="center" >   
         <Buscador></Buscador>
         </div>
         <br/>
@@ -38,7 +41,7 @@ function Prueba() {
         </body>
         
     );
-    
+}
   }
   
   
