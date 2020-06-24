@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import '../Styles/App.css';
 import Principal from "./Principal"
-
+import Button from '@material-ui/core/Button';
 
 class Login extends Component {
     render() {
@@ -35,7 +35,7 @@ class Login extends Component {
                 <div class="col-md-5"></div>
                 <div class="col-md-2" align="center">
                 
-                    <button  className="form-control" type="submit"  >Submit</button>
+                    <Button href="Principal" className="form-control" color="white" >Submit</Button>
                 </div>
                 </div>
                 

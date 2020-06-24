@@ -59,6 +59,7 @@ const Router =() => (
     <Route exact path="/Detalleaplicaciones" component={Detalleaplicaciones}/>
     <Route exact path="/Detalleservicios" component={Detalleservicios}/>
     <Route exact path="/Modificacion" component={Modificacion}/>
+    
 
     
 

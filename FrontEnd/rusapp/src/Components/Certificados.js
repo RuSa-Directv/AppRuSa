@@ -20,41 +20,57 @@ import uy from "../Img/UY.png";
 const { SearchBar } = Search;
 const { ExportCSVButton } = CSVExport;
 const columns = [{
-  dataField: 'mer',
-  text: 'Mercado',
+  dataField: 'nombre',
+  text: 'Nombre',
   sort: true
 }, {
-  dataField: 'cer',
-  text: 'Certificado',
+  dataField: 'pais',
+  text: 'Pais',
   sort: true
 }, {
-  dataField: 'emi',
-  text: 'Emitor',
+  dataField: 'emisor',
+  text: 'Emisor',
   sort: true
 },{
-    dataField: 'uso',
-    text: 'Uso',
+    dataField: 'reponsable',
+    text: 'Responsable',
     sort: true
 },{
-  dataField: 'ven',
-  text: 'Vencimiento',
+  dataField: 'telefono',
+  text: 'Telefono',
   sort: true
 }, {
-  dataField: 'res',
-  text: 'Responsable',
+  dataField: 'vencimiento',
+  text: 'Vencimiento',
   sort: true
 }];
-const products = [
-    {mer: 'Prepago', cer: 'Atencion al Cliente',emi:'Avaya', uso:'Gaston Salum',ven:'Gaston Salum',res:'Lucas Rusatti'},
-    {mer: 'Prepago', cer: 'Atencion al Cliente',emi:'Avaya', uso:'Gaston Salum',ven:'Gaston Salum',res:'Lucas Rusatti'},
-    {mer: 'Prepago', cer: 'Atencion al Cliente',emi:'Avaya', uso:'Gaston Salum',ven:'Gaston Salum',res:'Lucas Rusatti'},
-    {mer: 'Prepago', cer: 'Atencion al Cliente',emi:'Avaya', uso:'Gaston Salum',ven:'Gaston Salum',res:'Lucas Rusatti'},
-    {mer: 'Prepago', cer: 'Atencion al Cliente',emi:'Avaya', uso:'Gaston Salum',ven:'Gaston Salum',res:'Lucas Rusatti'},
-    {mer: 'Prepago', cer: 'Atencion al Cliente',emi:'Avaya', uso:'Gaston Salum',ven:'Gaston Salum',res:'Lucas Rusatti'},
-  ];
 
-function Certificados() {
-    return (   
+class Certificados extends React.Component {
+
+
+  constructor(props) 
+      {
+      super(props)
+      this.state = { products: [] , search : '' }
+      }
+
+
+    componentDidMount() 
+    {
+      fetch('http://localhost:2999/cert')
+        .then((response) => {
+          return response.json()
+        })
+        .then((products) => {
+          this.setState({ products: products })
+        })
+    }
+
+
+  
+            render() 
+            {
+              return (  
         <header class="fondopaises" >
 <div class="container-fluid">
 <div class="row">
@@ -82,11 +98,11 @@ function Certificados() {
     <div class="col-md-12">
 <ToolkitProvider
   keyField="id"
-  data={ products }
+  data={ this.state.products }
   columns={ columns }
   search
-  exportCSV
->
+  exportCSV ={{onlyExportFiltered: true, exportAll: false, fileName: 'Certificados.csv'}}>
+
 {
     props => (
       <div >
@@ -104,11 +120,11 @@ function Certificados() {
 </ToolkitProvider>
 </div>
 </div>
-</div>
-</header>
-);
-    
-}
+      </div>
+        </header>
+              );
+          }
+        }
 
 export default Certificados;
 

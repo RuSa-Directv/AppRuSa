@@ -92,7 +92,7 @@ function PermanentDrawerLeft() {
         
         <Divider />
         <List align="center"><br></br>
-              <Button  style = {{color:'White'}} onClick={() => setComponent("Empleados")} >ABM de Empleados</Button>
+              <Button style = {{color:'White'}} onClick={() => setComponent("Empleados")} >ABM de Empleados</Button>
               <Button style = {{color:'White'}} onClick={() => setComponent("Servicios")}>ABM de Servicios</Button>
               <Button style = {{color:'White'}} onClick={() => setComponent("Productos")}>ABM de Producto</Button>
               <Button style = {{color:'White'}} onClick={() => setComponent("Aplicaciones")}>ABM de Aplicaciones</Button>
