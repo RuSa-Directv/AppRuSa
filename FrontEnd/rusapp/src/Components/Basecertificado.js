@@ -3,12 +3,12 @@ import MaterialTable from 'material-table';
 
   const columns=[ 
         
-        { title: 'Certificado', field: 'nombre' },
-        { title: 'Pais', field: 'pais' },
-        { title: 'Emisor', field: 'emisor'},
-        { title: 'Responsable', field: 'reponsable'},
-        { title: 'Telefono', field: 'telefono'},
-        { title: 'Vencimiento', field: 'vencimiento'},];
+        { title: 'Certificado', field: 'nombre', initialEditValue:"Certificado" },
+        { title: 'Pais', field: 'pais',initialEditValue:"Pais" },
+        { title: 'Emisor', field: 'emisor',initialEditValue:"Emisor"},
+        { title: 'Responsable', field: 'reponsable',initialEditValue:"Responsable"},
+        { title: 'Telefono', field: 'telefono',initialEditValue:"Telefono"},
+        { title: 'Vencimiento', field: 'vencimiento', type:'date', initialEditValue:"2020-01-01"},];
         
 
 

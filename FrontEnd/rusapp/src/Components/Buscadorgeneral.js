@@ -24,7 +24,11 @@ const columns = [{
   dataField: 'pro',
   text: 'Producto',
   sort: true
-}, {
+},{
+  dataField: 'Pais',
+  text: 'Pais',
+  sort: true
+},{
   dataField: 'ser',
   text: 'Servicio',
   sort: true

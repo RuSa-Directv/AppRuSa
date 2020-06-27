@@ -4,7 +4,7 @@ import MaterialTable from 'material-table';
 
 
   const columns=[ 
-    { title: 'Nombre', field: 'n_paises' }];
+    { title: 'Nombre', field: 'n_paises', initialEditValue:"Nombre" }];
 
 
     // para Despues

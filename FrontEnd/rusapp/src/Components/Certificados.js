@@ -14,6 +14,7 @@ import cl from "../Img/CL.png";
 import pr from "../Img/PR.png";
 import ca from "../Img/CA.png";
 import uy from "../Img/UY.png";
+import { dateFilter } from 'react-bootstrap-table2-filter';
 
 
 
@@ -42,7 +43,8 @@ const columns = [{
 }, {
   dataField: 'vencimiento',
   text: 'Vencimiento',
-  sort: true
+  sort: true ,
+  
 }];
 
 class Certificados extends React.Component {
