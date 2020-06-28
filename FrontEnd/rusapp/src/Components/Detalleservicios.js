@@ -173,7 +173,7 @@ app()
     up (datos) 
     {
 
-    fetch("http://localhost:2999/upcert",{
+    fetch("http://localhost:2999/updetsrv",{
         method:'POST', 
         body: JSON.stringify(datos),
 
@@ -188,7 +188,7 @@ app()
     {
       var id_ = {id : 0}
       id_.id = datos.id
-      fetch("http://localhost:2999/delcert",{
+      fetch("http://localhost:2999/deldetsrv",{
         method:'POST', 
         body: JSON.stringify(id_),
 
