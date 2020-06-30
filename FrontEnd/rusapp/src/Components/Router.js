@@ -25,7 +25,7 @@ import Servicios from "./Servicios"
 import Detalleaplicaciones from "./Detalleaplicaciones"
 import Detalleservicios from "./Detalleservicios"
 import Modificacion from "./Modificacion"
-
+import NotFoundPage from "./NotFoundPage"
 
 
 
@@ -59,7 +59,7 @@ const Router =() => (
     <Route exact path="/Detalleaplicaciones" component={Detalleaplicaciones}/>
     <Route exact path="/Detalleservicios" component={Detalleservicios}/>
     <Route exact path="/Modificacion" component={Modificacion}/>
-    
+    <Route path="*" component={NotFoundPage} />
 
     
 

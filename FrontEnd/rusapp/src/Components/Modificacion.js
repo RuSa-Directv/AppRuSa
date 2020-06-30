@@ -21,6 +21,8 @@ import Paises from "./Paises"
 import Detalleservicio from "./Detalleservicios"
 import Detalleaplicaciones from "./Detalleaplicaciones"
 import Basecertificado from "./Basecertificado"
+import { withRouter} from 'react-router-dom';
+
 
 
 const drawerWidth = 240;
@@ -29,8 +31,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
   },
   appBar: {
-    // width: `calc(100% - ${drawerWidth}px)`,
-    // marginLeft: drawerWidth,
+
     zIndex: theme.zIndex.drawer + 1,
   },
   drawer: {
@@ -51,11 +52,22 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+function logout()
+{
+  console.log('logout')
+  localStorage.removeItem('tokenL')
+  alert('Sesion Finalizada')
+  this.props.history.push("/Inicio")
+
+}
+
+
 
 function PermanentDrawerLeft() {
   const classes = useStyles();
   const [component, setComponent] = useState('Empleados')
   
+
 
   return (
     <div className={classes.root}>
@@ -70,7 +82,7 @@ function PermanentDrawerLeft() {
           </Typography> </div>
           <div class="col-md-2" align="right">
           <Typography variant="h6" noWrap  >
-        <Button style = {{color:'White'}}  href="Inicio"  >
+        <Button style = {{color:'White'}}  href="Inicio" onClick={logout} >
           
             Logout
             </Button>
@@ -92,6 +104,7 @@ function PermanentDrawerLeft() {
         
         <Divider />
         <List align="center"><br></br>
+        
               <Button style = {{color:'White'}} onClick={() => setComponent("Empleados")} >ABM de Empleados</Button>
               <Button style = {{color:'White'}} onClick={() => setComponent("Servicios")}>ABM de Servicios</Button>
               <Button style = {{color:'White'}} onClick={() => setComponent("Productos")}>ABM de Producto</Button>
@@ -133,4 +146,4 @@ function PermanentDrawerLeft() {
     
   );
 }
-    export default PermanentDrawerLeft;
+    export default withRouter (PermanentDrawerLeft);

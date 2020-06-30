@@ -70,3 +70,18 @@
   height: 28;
   margin: 4;
 }
+
+.error{
+  background-image: url("../Img/404.jpg");
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* font-size:400%; */
+  /* color: blue ; */
+  /* font-family: cursive; */
+  /* font-weight: 600; */
+  background-size:100% 100%;
+
+}

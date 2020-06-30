@@ -1,5 +1,9 @@
 import React, {useState} from 'react';
 import MaterialTable from 'material-table';
+import { withRouter} from 'react-router-dom';
+
+// Agregar en todos el With Router
+
 
   const columns=[ 
         
@@ -12,13 +16,7 @@ import MaterialTable from 'material-table';
         
 
 
-    // para Despues
-    // title: 'Birth Place',
-    // field: 'birthCity',
-    // lookup: { 34: 'İstanbul', 63: 'Şanlıurfa', 79 :'metal' },
-
-  
-
+   
 class Basecertificado extends React.Component{
 
 
@@ -36,6 +34,32 @@ class Basecertificado extends React.Component{
 
 
   componentDidMount() {
+
+    const token = localStorage.getItem('tokenL')
+    fetch("http://localhost:2999/login",{
+        method:'POST', 
+        headers: {
+        'token':token
+      }
+       }).then((response) => {
+          if(response.status === 200)
+          {
+            console.log('logueado')
+          }
+        else if (response.status === 666)
+          {
+            alert('Sesion Expirada')
+            this.props.history.push("/Inicio")
+          }
+        else
+        {
+          this.props.history.push("/Inicio")
+        }
+        })
+
+
+
+
     this.actualizar()
     }
 
@@ -53,48 +77,85 @@ class Basecertificado extends React.Component{
 
     add (datos) 
     {
-    fetch("http://localhost:2999/cert",{
+    
+      const token = localStorage.getItem('tokenL')
+
+
+      fetch("http://localhost:2999/cert",{
         method:'POST', 
         body: JSON.stringify(datos),
-
-        headers: {'Content-Type': 'application/json'}
-       })
-    alert('Certificado Creado')
-    this.actualizar()
+        headers: {'Content-Type': 'application/json','token':token}
+       }).then((response) => {
+        if(response.status === 200)
+        {
+          alert('Certificado Creado')
+          this.actualizar()
+        }
+      else if (response.status === 666)
+        {
+          alert('Sesion Expirada')
+          this.props.history.push("/Inicio")
+        }
+      else
+      {
+        this.props.history.push("/Inicio")
+      }
+      })
     }
 
     up (datos) 
     {
-    // event.preventDefault();
-    // var datos = {'usuario':'tester', 'pass':'tester', 'nombre':'tester de los tester', 'email':'tester@rusa.com'};
-    // datos = JSON.stringify(datos)
-    fetch("http://localhost:2999/upcert",{
-        method:'POST', 
-        body: JSON.stringify(datos),
 
-        headers: {'Content-Type': 'application/json'}
-       })
+      const token = localStorage.getItem('tokenL')
+      fetch("http://localhost:2999/upcert",{
+          method:'POST', 
+          body: JSON.stringify(datos),
+          headers: {'Content-Type': 'application/json','token':token}
+         }).then((response) => {
+          if(response.status === 200)
+          {
+            alert('Certificado Actualizado')
+            this.actualizar()
+          }
+        else if (response.status === 666)
+          {
+            alert('Sesion Expirada')
+            this.props.history.push("/Inicio")
+          }
+        else
+        {
+          this.props.history.push("/Inicio")
+        }
+      })
 
-
-    console.log(datos)
-    alert('Certificado Actualizado')
-    this.actualizar()
+    
     }
     
     del(datos)
     {
+      const token = localStorage.getItem('tokenL')
       var id_ = {id : 0}
       id_.id = datos.id
       fetch("http://localhost:2999/delcert",{
         method:'POST', 
         body: JSON.stringify(id_),
-
-        headers: {'Content-Type': 'application/json'}
-       })
-
-
-      alert('Certificado Eliminado')
-      this.actualizar()
+        headers: {'Content-Type': 'application/json','token':token}
+       }).then((response) => {
+        if(response.status === 200)
+        {
+          alert('Certificado Eliminado')
+          this.actualizar()
+        }
+      else if (response.status === 666)
+        {
+          alert('Sesion Expirada')
+          this.props.history.push("/Inicio")
+        }
+      else
+      {
+        this.props.history.push("/Inicio")
+      }
+    })
     }
 render(
   
@@ -141,7 +202,7 @@ render(
 }
 }
 
-export default Basecertificado;
+export default withRouter (Basecertificado);
 
 
 

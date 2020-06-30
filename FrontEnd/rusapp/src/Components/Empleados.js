@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import MaterialTable from 'material-table';
+import { withRouter} from 'react-router-dom';
 
 
 
@@ -8,12 +9,6 @@ import MaterialTable from 'material-table';
     { title: 'Telefono', field: 'telefono',initialEditValue: 'Telefono' },
     { title: 'Superior Inmediato', field: 'sup_inmediato',initialEditValue: 'Superior'},
     { title: 'Departamento', field: 'departamento',initialEditValue: 'Departamento'}];
-
-
-    // para Despues
-    // title: 'Birth Place',
-    // field: 'birthCity',
-    // lookup: { 34: 'İstanbul', 63: 'Şanlıurfa', 79 :'metal' },
 
   
 
@@ -34,6 +29,29 @@ class Empleados extends React.Component{
 
 
   componentDidMount() {
+
+    const token = localStorage.getItem('tokenL')
+    fetch("http://localhost:2999/login",{
+        method:'POST', 
+        headers: {
+        'token':token
+      }
+       }).then((response) => {
+          if(response.status === 200)
+          {
+            console.log('logueado')
+          }
+        else if (response.status === 666)
+          {
+            alert('Sesion Expirada')
+            this.props.history.push("/Inicio")
+          }
+        else
+        {
+          this.props.history.push("/Inicio")
+        }
+        })
+
     this.actualizar()
     }
 
@@ -51,49 +69,86 @@ class Empleados extends React.Component{
 
     add (datos) 
     {
-    fetch("http://localhost:2999/addvel",{
+    
+      const token = localStorage.getItem('tokenL')
+
+
+      fetch("http://localhost:2999/addvel",{
         method:'POST', 
         body: JSON.stringify(datos),
-
-        headers: {'Content-Type': 'application/json'}
-       })
-    alert('Empleado Creado')
-    this.actualizar()
+        headers: {'Content-Type': 'application/json','token':token}
+       }).then((response) => {
+        if(response.status === 200)
+        {
+          alert('Empleado Creado')
+          this.actualizar()
+        }
+      else if (response.status === 666)
+        {
+          alert('Sesion Expirada')
+          this.props.history.push("/Inicio")
+        }
+      else
+      {
+        this.props.history.push("/Inicio")
+      }
+      })
+    
     }
 
     up (datos) 
     {
-    // event.preventDefault();
-    // var datos = {'usuario':'tester', 'pass':'tester', 'nombre':'tester de los tester', 'email':'tester@rusa.com'};
-    // datos = JSON.stringify(datos)
-    fetch("http://localhost:2999/upvel",{
-        method:'POST', 
-        body: JSON.stringify(datos),
-
-        headers: {'Content-Type': 'application/json'}
-       })
-
-
-    console.log(datos)
-    alert('Empleado Actualizado')
-    this.actualizar()
+      const token = localStorage.getItem('tokenL')
+      fetch("http://localhost:2999/upvel",{
+          method:'POST', 
+          body: JSON.stringify(datos),
+          headers: {'Content-Type': 'application/json','token':token}
+         }).then((response) => {
+          if(response.status === 200)
+          {
+            alert('Empleado Actualizado')
+            this.actualizar()
+          }
+        else if (response.status === 666)
+          {
+            alert('Sesion Expirada')
+            this.props.history.push("/Inicio")
+          }
+        else
+        {
+          this.props.history.push("/Inicio")
+        }
+      })
     }
     
     del(datos)
     {
+      const token = localStorage.getItem('tokenL')
       var id = {id_veladores : 0}
       id.id_veladores = datos.id_veladores
-      fetch("http://localhost:2999/delvel",{
+      fetch("http://localhost:2999/delvel",
+      {
         method:'POST', 
         body: JSON.stringify(id),
-
-        headers: {'Content-Type': 'application/json'}
-       })
-
-
-      alert('Empleado Eliminado')
-      this.actualizar()
-    }
+        headers: {'Content-Type': 'application/json','token':token}
+       }).then((response) => {
+        if(response.status === 200)
+        {
+          alert('Certificado Eliminado')
+          this.actualizar()
+        }
+      else if (response.status === 666)
+        {
+          alert('Sesion Expirada')
+          this.props.history.push("/Inicio")
+        }
+      else
+      {
+        this.props.history.push("/Inicio")
+      }
+    })
+      
+       }
 render(
   
 ){
@@ -139,4 +194,4 @@ render(
 }
 }
 
-export default Empleados;
+export default withRouter(Empleados);
