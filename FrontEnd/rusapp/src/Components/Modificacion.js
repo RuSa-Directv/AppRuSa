@@ -22,9 +22,9 @@ import Detalleservicio from "./Detalleservicios"
 import Detalleaplicaciones from "./Detalleaplicaciones"
 import Basecertificado from "./Basecertificado"
 import { withRouter} from 'react-router-dom';
-
-
-
+import Usuario from "./Usuario"
+import dtv from '../Img/dtv.png';
+import '../Styles/Introduccion.css';
 const drawerWidth = 240;
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -74,13 +74,20 @@ function PermanentDrawerLeft() {
       <CssBaseline />
       <AppBar position="fixed" className={classes.appBar}>
         <Toolbar>
-        <div class="col-md-1" align="center"> <Typography variant="h6" noWrap >
-            Directv
-          </Typography> </div>
-         <div class="col-md-9" align="center"> <Typography variant="h6" noWrap >
+        <div class="col-md-2" align="center"> 
+        
+        <Typography variant="h6" noWrap >
+            Bienvenido...
+        </Typography> 
+          </div>
+         <div class="col-md-9" align="center"> 
+        <img src={dtv} className="mod" />
+
+         {/* <Typography variant="h6" noWrap >
             Bienvenido Admin
-          </Typography> </div>
-          <div class="col-md-2" align="right">
+          </Typography>  */}
+          </div>
+          <div class="col-md-1" align="right">
           <Typography variant="h6" noWrap  >
         <Button style = {{color:'White'}}  href="Inicio" onClick={logout} >
           
@@ -107,14 +114,17 @@ function PermanentDrawerLeft() {
         
               <Button style = {{color:'White'}} onClick={() => setComponent("Empleados")} >ABM de Empleados</Button>
               <Button style = {{color:'White'}} onClick={() => setComponent("Servicios")}>ABM de Servicios</Button>
-              <Button style = {{color:'White'}} onClick={() => setComponent("Productos")}>ABM de Producto</Button>
+              <Button style = {{color:'White'}} onClick={() => setComponent("Productos")}>ABM de Productos</Button>
               <Button style = {{color:'White'}} onClick={() => setComponent("Aplicaciones")}>ABM de Aplicaciones</Button>
-              <Button style = {{color:'White'}} onClick={() => setComponent("Paises")}>ABM de Pais</Button>
+              <Button style = {{color:'White'}} onClick={() => setComponent("Paises")}>ABM de Paises</Button>
               <Button style = {{color:'White'}} onClick={() => setComponent("Detalleaplicaciones")}>ABM Detalle Aplicaciones</Button>
               <Button style = {{color:'White'}} onClick={() => setComponent("Detalleservicios")}>ABM Detalle Servicios</Button>
         
         <Divider />
         <Button style = {{color:'White'}} onClick={() => setComponent("Basecertificado")}>ABM Certificados</Button>
+        <Divider />
+        <Button style = {{color:'White'}} onClick={() => setComponent("Usuario")}>ABM Usuario</Button>
+
         </List>
       </Drawer>
       <main className={classes.content}>
@@ -136,8 +146,10 @@ function PermanentDrawerLeft() {
                 ? <Detalleaplicaciones></Detalleaplicaciones>
                 : [ component === "Detalleservicios"
                 ? <Detalleservicio></Detalleservicio>
-                : <Basecertificado></Basecertificado>
-                ] ] ] ] ] ]
+                : [ component === "Basecertificado"
+                ? <Basecertificado></Basecertificado>
+                : <Usuario></Usuario>
+                ] ] ] ] ] ] ]
             
         }
       </main>

@@ -32,7 +32,7 @@ class Buscador extends React.Component {
     render(){
       
         return (
-          <Paper 
+          <Paper  
           component="form" 
           onSubmit={this.handleSubmit} >
 
@@ -43,7 +43,7 @@ class Buscador extends React.Component {
             id="username" 
             name="username" 
             type="text"
-            
+           
             >
 
             </InputBase>

@@ -18,6 +18,8 @@ class Detalleservicios extends React.Component{
     this.app = this.app.bind(this);
     this.srv = this.srv.bind(this);
     this.prd = this.prd.bind(this);
+   
+
 
     this.add = this.add.bind(this);
     this.up = this.up.bind(this);
@@ -26,7 +28,7 @@ class Detalleservicios extends React.Component{
     this.c_app ={}
     this.c_srv ={}
     this.c_prd ={}
-
+   
     this.array1 ={}
     this.columns=[ ]
         
@@ -40,7 +42,8 @@ class Detalleservicios extends React.Component{
     this.app()
     this.srv()
     this.prd()
-    
+   
+
     const token = localStorage.getItem('tokenL')
     fetch("http://localhost:2999/login",{
         method:'POST', 
@@ -70,7 +73,8 @@ class Detalleservicios extends React.Component{
     { title: 'Servicio', field: 'id_serv', lookup: this.c_srv },
     { title: 'Producto', field: 'id_prod',lookup: this.c_prd },
     { title: 'Pais', field: 'id_pai',lookup: this.c_pais},
-    { title: 'Aplicacion', field: 'id_aplica',lookup: this.c_app}
+    { title: 'Aplicacion', field: 'id_aplica',lookup: this.c_app},
+    { title: 'Ponderacion %', field: 'ponderacion'}
     ];
 
 
@@ -162,12 +166,6 @@ app()
           this.c_prd[key1] = key2
       })  })  })
   }
-
-
-
-
-
-
 
 
 
