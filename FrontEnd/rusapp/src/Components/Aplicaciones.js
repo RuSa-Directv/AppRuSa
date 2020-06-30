@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import MaterialTable from 'material-table';
+import { withRouter} from 'react-router-dom';
 
 
 
@@ -31,6 +32,28 @@ class Aplicaciones extends React.Component{
 
 
   componentDidMount() {
+    const token = localStorage.getItem('tokenL')
+    fetch("http://localhost:2999/login",{
+        method:'POST', 
+        headers: {
+        'token':token
+      }
+       }).then((response) => {
+          if(response.status === 200)
+          {
+            console.log('logueado')
+          }
+        else if (response.status === 666)
+          {
+            alert('Sesion Expirada')
+            this.props.history.push("/Inicio")
+          }
+        else
+        {
+          this.props.history.push("/Inicio")
+        }
+        })
+
     this.actualizar()
     }
 
@@ -48,48 +71,79 @@ class Aplicaciones extends React.Component{
 
     add (datos) 
     {
+    const token = localStorage.getItem('tokenL')
     fetch("http://localhost:2999/addapp",{
-        method:'POST', 
-        body: JSON.stringify(datos),
-
-        headers: {'Content-Type': 'application/json'}
-       })
-    alert('Aplicacion Creada')
-    this.actualizar()
+      method:'POST', 
+      body: JSON.stringify(datos),
+      headers: {'Content-Type': 'application/json','token':token}
+     }).then((response) => {
+      if(response.status === 200)
+      {
+        alert('Aplicacion Creada')
+        this.actualizar()
+      }
+    else if (response.status === 666)
+      {
+        alert('Sesion Expirada')
+        this.props.history.push("/Inicio")
+      }
+    else
+    {
+      this.props.history.push("/Inicio")
+    }
+    })
     }
 
     up (datos) 
     {
-    // event.preventDefault();
-    // var datos = {'usuario':'tester', 'pass':'tester', 'nombre':'tester de los tester', 'email':'tester@rusa.com'};
-    // datos = JSON.stringify(datos)
+    const token = localStorage.getItem('tokenL')
     fetch("http://localhost:2999/upapp",{
-        method:'POST', 
-        body: JSON.stringify(datos),
-
-        headers: {'Content-Type': 'application/json'}
-       })
-
-
-    console.log(datos)
-    alert('Aplicacion Actualizada')
-    this.actualizar()
+      method:'POST', 
+      body: JSON.stringify(datos),
+      headers: {'Content-Type': 'application/json','token':token}
+     }).then((response) => {
+      if(response.status === 200)
+      {
+        alert('Aplicacion Actualizada')
+        this.actualizar()
+      }
+    else if (response.status === 666)
+      {
+        alert('Sesion Expirada')
+        this.props.history.push("/Inicio")
+      }
+    else
+    {
+      this.props.history.push("/Inicio")
+    }
+  })
     }
     
     del(datos)
     {
+      const token = localStorage.getItem('tokenL')
       var id = {id_aplicaciones : 0}
       id.id_aplicaciones = datos.id_aplicaciones
       fetch("http://localhost:2999/delapp",{
         method:'POST', 
         body: JSON.stringify(id),
-
-        headers: {'Content-Type': 'application/json'}
-       })
-
-
-      alert('Aplicacion Eliminada')
-      this.actualizar()
+        headers: {'Content-Type': 'application/json','token':token}
+       }).then((response) => {
+        if(response.status === 200)
+        {
+          alert('Aplicacion Eliminada')
+          this.actualizar()
+        }
+      else if (response.status === 666)
+        {
+          alert('Sesion Expirada')
+          this.props.history.push("/Inicio")
+        }
+      else
+      {
+        this.props.history.push("/Inicio")
+      }
+    })
     }
 render(
   
@@ -136,4 +190,4 @@ render(
 }
 }
 
-export default Aplicaciones;
+export default withRouter(Aplicaciones);

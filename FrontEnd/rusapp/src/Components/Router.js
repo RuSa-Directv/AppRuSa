@@ -14,16 +14,7 @@ import Caribe from "./Caribe"
 import Uruguay from "./Uruguay"
 import Ecuador from "./Ecuador"
 import Certificados from "./Certificados"
-import Basecertificado from "./Basecertificado"
 import Buscadorgeneral from "./Buscadorgeneral"
-import Login from "./Login"
-import Empleados from "./Empleados"
-import Paises from "./Paises"
-import Aplicaciones from "./Aplicaciones"
-import Productos from "./Productos"
-import Servicios from "./Servicios"
-import Detalleaplicaciones from "./Detalleaplicaciones"
-import Detalleservicios from "./Detalleservicios"
 import Modificacion from "./Modificacion"
 import NotFoundPage from "./NotFoundPage"
 
@@ -34,7 +25,7 @@ const Router =() => (
 
     <Switch>
         
-    <Route exact path="/" component={Inicio}/>
+    <Route exact path="/" component={Principal}/>
     <Route exact path="/Header" component={Header}/>
     <Route exact path="/Inicio" component={Inicio}/>
     <Route exact path="/Buscador" component={Buscador}/>
@@ -48,16 +39,7 @@ const Router =() => (
     <Route exact path="/Uruguay" component={Uruguay}/>
     <Route exact path="/Ecuador" component={Ecuador}/>
     <Route exact path="/Certificados" component={Certificados}/>   
-    <Route exact path="/Basecertificado" component={Basecertificado}/>
-    <Route exact path="/Buscadorgeneral" component={Buscadorgeneral}/>
-    <Route exact path="/Login" component={Login}/>
-    <Route exact path="/Empleados" component={Empleados}/>
-    <Route exact path="/Paises" component={Paises}/>
-    <Route exact path="/Aplicaciones" component={Aplicaciones}/>
-    <Route exact path="/Productos" component={Productos}/>
-    <Route exact path="/Servicios" component={Servicios}/>
-    <Route exact path="/Detalleaplicaciones" component={Detalleaplicaciones}/>
-    <Route exact path="/Detalleservicios" component={Detalleservicios}/>
+    <Route exact path="/Buscadorgeneral" component={Buscadorgeneral}/> 
     <Route exact path="/Modificacion" component={Modificacion}/>
     <Route path="*" component={NotFoundPage} />
 

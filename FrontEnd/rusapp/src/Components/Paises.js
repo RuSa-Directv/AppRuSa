@@ -1,16 +1,12 @@
 import React, {useState} from 'react';
 import MaterialTable from 'material-table';
+import { withRouter} from 'react-router-dom';
 
 
 
   const columns=[ 
     { title: 'Nombre', field: 'n_paises', initialEditValue:"Nombre" }];
 
-
-    // para Despues
-    // title: 'Birth Place',
-    // field: 'birthCity',
-    // lookup: { 34: 'İstanbul', 63: 'Şanlıurfa', 79 :'metal' },
 
   
 
@@ -31,6 +27,32 @@ class Pais extends React.Component{
 
 
   componentDidMount() {
+
+    const token = localStorage.getItem('tokenL')
+    fetch("http://localhost:2999/login",{
+        method:'POST', 
+        headers: {
+        'token':token
+      }
+       }).then((response) => {
+          if(response.status === 200)
+          {
+            console.log('logueado')
+          }
+        else if (response.status === 666)
+          {
+            alert('Sesion Expirada')
+            this.props.history.push("/Inicio")
+          }
+        else
+        {
+          this.props.history.push("/Inicio")
+        }
+        })
+
+
+
+
     this.actualizar()
     }
 
@@ -48,50 +70,80 @@ class Pais extends React.Component{
 
     add (datos) 
     {
+    const token = localStorage.getItem('tokenL')
     fetch("http://localhost:2999/addpais",{
-        method:'POST', 
-        body: JSON.stringify(datos),
-
-        headers: {'Content-Type': 'application/json'}
-       })
-    alert('Pais Creado')
-    this.actualizar()
+      method:'POST', 
+      body: JSON.stringify(datos),
+      headers: {'Content-Type': 'application/json','token':token}
+     }).then((response) => {
+      if(response.status === 200)
+      {
+        alert('Pais Creado')
+        this.actualizar()
+      }
+    else if (response.status === 666)
+      {
+        alert('Sesion Expirada')
+        this.props.history.push("/Inicio")
+      }
+    else
+    {
+      this.props.history.push("/Inicio")
+    }
+    })
     }
 
     up (datos) 
     {
-    // event.preventDefault();
-    // var datos = {'usuario':'tester', 'pass':'tester', 'nombre':'tester de los tester', 'email':'tester@rusa.com'};
-    // datos = JSON.stringify(datos)
+    const token = localStorage.getItem('tokenL')
     fetch("http://localhost:2999/uppais",{
-        method:'POST', 
-        body: JSON.stringify(datos),
-
-        headers: {'Content-Type': 'application/json'}
-       })
-
-
-    console.log(datos)
-    alert('Pais Actualizado')
-    this.actualizar()
+      method:'POST', 
+      body: JSON.stringify(datos),
+      headers: {'Content-Type': 'application/json','token':token}
+     }).then((response) => {
+      if(response.status === 200)
+      {
+        alert('Pais Actualizado')
+        this.actualizar()
+      }
+    else if (response.status === 666)
+      {
+        alert('Sesion Expirada')
+        this.props.history.push("/Inicio")
+      }
+    else
+    {
+      this.props.history.push("/Inicio")
+    }
+  })
     }
     
     del(datos)
     {
+      const token = localStorage.getItem('tokenL')
       var id = {id_paises : 0}
       id.id_paises = datos.id_paises
       console.log(id.id_paises)
       fetch("http://localhost:2999/delpais",{
         method:'POST', 
         body: JSON.stringify(id),
-
-        headers: {'Content-Type': 'application/json'}
-       })
-
-
-      alert('Pais Eliminado')
-      this.actualizar()
-      
+        headers: {'Content-Type': 'application/json','token':token}
+       }).then((response) => {
+        if(response.status === 200)
+        {
+          alert('Pais Eliminado')
+          this.actualizar()
+        }
+      else if (response.status === 666)
+        {
+          alert('Sesion Expirada')
+          this.props.history.push("/Inicio")
+        }
+      else
+      {
+        this.props.history.push("/Inicio")
+      }
+    })
     }
 render(
   
@@ -138,7 +190,7 @@ render(
 }
 }
 
-export default Pais;
+export default withRouter(Pais);
 
 
 

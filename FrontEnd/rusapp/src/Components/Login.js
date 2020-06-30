@@ -74,6 +74,7 @@ class Login extends Component {
                     <label className="login">Contraseña</label>
                     <input value={this.password} type="password" className="form-control" placeholder="Ingrese Contraseña" 
                     onChange={e => {this.setState({password: e.target.value});}}
+                    
                     />
                 </div>
 
@@ -85,7 +86,8 @@ class Login extends Component {
                 <div class="col-md-5"></div>
                 <div class="col-md-2" align="center">
                 
-                    <Button onClick={this.postLogin} className="form-control" color="white" >Submit</Button>
+                    <Button onClick={this.postLogin} className="form-control" color="white" type="submit" 
+                     >Submit</Button>
                 </div>
                 </div>
                 

@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import MaterialTable from 'material-table';
+import { withRouter} from 'react-router-dom';
 
 
 
@@ -26,20 +27,12 @@ class Detalleaplicaciones extends React.Component{
     this.c_app ={}
 
 
-    // this.c_esc1 ={}
-    // this.c_esc2 ={}
-    // this.c_esc3 ={}
+ 
 
 
     this.array1 ={}
     this.columns=[ ]
-        
-      // { title: 'Certificado', field: 'nombre', initialEditValue:"Certificado" },
-      // { title: 'Pais', field: 'pais',lookup: this.state.loop },
-      // { title: 'Emisor', field: 'emisor',initialEditValue:"Emisor"},
-      // { title: 'Responsable', field: 'reponsable',initialEditValue:"Responsable"},
-      // { title: 'Telefono', field: 'telefono',initialEditValue:"Telefono"},
-      // { title: 'Vencimiento', field: 'vencimiento', type:'date', initialEditValue:"2020-01-01"},];
+ 
 
   }
   
@@ -51,10 +44,29 @@ class Detalleaplicaciones extends React.Component{
     this.resp()
     this.app()
 
- 
- 
+    const token = localStorage.getItem('tokenL')
+    fetch("http://localhost:2999/login",{
+        method:'POST', 
+        headers: {
+        'token':token
+      }
+       }).then((response) => {
+          if(response.status === 200)
+          {
+            console.log('logueado')
+          }
+        else if (response.status === 666)
+          {
+            alert('Sesion Expirada')
+            this.props.history.push("/Inicio")
+          }
+        else
+        {
+          this.props.history.push("/Inicio")
+        }
+        })
 
-
+    
   this.columns=[ 
   
     { title: 'Aplicacion', field: 'id_aplica', lookup: this.c_app },
@@ -116,44 +128,79 @@ app()
 
     add (datos) 
     {
+    const token = localStorage.getItem('tokenL')
     fetch("http://localhost:2999/adddetapp",{
-        method:'POST', 
-        body: JSON.stringify(datos),
-
-        headers: {'Content-Type': 'application/json'}
-       })
-    alert('Detalle Aplicacion Creado')
-    this.actualizar()
+      method:'POST', 
+      body: JSON.stringify(datos),
+      headers: {'Content-Type': 'application/json','token':token}
+     }).then((response) => {
+      if(response.status === 200)
+      {
+        alert('Empleado Creado')
+        this.actualizar()
+      }
+    else if (response.status === 666)
+      {
+        alert('Sesion Expirada')
+        this.props.history.push("/Inicio")
+      }
+    else
+    {
+      this.props.history.push("/Inicio")
+    }
+    })
     }
 
     up (datos) 
     {
-
+      const token = localStorage.getItem('tokenL')
     fetch("http://localhost:2999/updetapp",{
-        method:'POST', 
-        body: JSON.stringify(datos),
-
-        headers: {'Content-Type': 'application/json'}
-       })
-
-    alert('Detalle Aplicacion Actualizado')
-    this.actualizar()
+      method:'POST', 
+      body: JSON.stringify(datos),
+      headers: {'Content-Type': 'application/json','token':token}
+     }).then((response) => {
+      if(response.status === 200)
+      {
+        alert('Empleado Actualizado')
+        this.actualizar()
+      }
+    else if (response.status === 666)
+      {
+        alert('Sesion Expirada')
+        this.props.history.push("/Inicio")
+      }
+    else
+    {
+      this.props.history.push("/Inicio")
+    }
+  })
     }
     
     del(datos)
     {
+      const token = localStorage.getItem('tokenL')
       var id_ = {id : 0}
       id_.id = datos.id
       fetch("http://localhost:2999/deldetapp",{
         method:'POST', 
         body: JSON.stringify(id_),
-
-        headers: {'Content-Type': 'application/json'}
-       })
-
-
-      alert('Detalle Aplicacion Eliminado')
-      this.actualizar()
+        headers: {'Content-Type': 'application/json','token':token}
+       }).then((response) => {
+        if(response.status === 200)
+        {
+          alert('Certificado Eliminado')
+          this.actualizar()
+        }
+      else if (response.status === 666)
+        {
+          alert('Sesion Expirada')
+          this.props.history.push("/Inicio")
+        }
+      else
+      {
+        this.props.history.push("/Inicio")
+      }
+    })
     }
 render(
   
@@ -200,4 +247,4 @@ render(
 }
 }
 
-export default Detalleaplicaciones;
+export default withRouter(Detalleaplicaciones);
