@@ -43,7 +43,6 @@ const columns = [{
 }, {
   dataField: 'vencimiento',
   text: 'Vencimiento',
-  sort: true ,
   
 }];
 

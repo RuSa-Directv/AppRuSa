@@ -101,7 +101,7 @@ class Usuario extends Component {
                 <div class="col-md-2" align="center">
                 
                     <Button onClick={this.Newpass} className="form-control" color="primary" variant="outlined" type="submit" 
-                     >Submit</Button>
+                     >Aceptar</Button>
                 </div>
                 </div>
                 
