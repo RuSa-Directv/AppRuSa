@@ -27,6 +27,7 @@ class Login extends Component {
                     response.json()
         
                     .then((token) => {
+                        localStorage.setItem('usuarioL',this.state.userName)
                         localStorage.setItem('tokenL',token.token)
                         this.props.history.push("/Modificacion")
         

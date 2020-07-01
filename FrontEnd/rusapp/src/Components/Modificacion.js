@@ -25,6 +25,8 @@ import { withRouter} from 'react-router-dom';
 import Usuario from "./Usuario"
 import dtv from '../Img/dtv.png';
 import '../Styles/Introduccion.css';
+
+
 const drawerWidth = 240;
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -68,8 +70,9 @@ function PermanentDrawerLeft() {
   const [component, setComponent] = useState('Empleados')
   
 
-
+  const usuario = localStorage.getItem('usuarioL')
   return (
+    
     <div className={classes.root}>
       <CssBaseline />
       <AppBar position="fixed" className={classes.appBar}>
@@ -77,7 +80,7 @@ function PermanentDrawerLeft() {
         <div class="col-md-2" align="center"> 
         
         <Typography variant="h6" noWrap >
-            Bienvenido...
+            Bienvenido {usuario}
         </Typography> 
           </div>
          <div class="col-md-9" align="center"> 
@@ -123,7 +126,7 @@ function PermanentDrawerLeft() {
         <Divider />
         <Button style = {{color:'White'}} onClick={() => setComponent("Basecertificado")}>ABM Certificados</Button>
         <Divider />
-        <Button style = {{color:'White'}} onClick={() => setComponent("Usuario")}>ABM Usuario</Button>
+        <Button style = {{color:'White'}} onClick={() => setComponent("Usuario")}>Cambio de Contraseña</Button>
 
         </List>
       </Drawer>
