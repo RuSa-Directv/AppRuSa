@@ -69,7 +69,7 @@ class PuertoRico extends React.Component {
 
     componentDidMount() 
     {
-      fetch('http://localhost:2999/paises/PuertoRico')
+      fetch('http://localhost:2999/paises/Puerto Rico')
         .then((response) => {
           return response.json()
         })

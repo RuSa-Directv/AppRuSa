@@ -136,7 +136,7 @@ app()
      }).then((response) => {
       if(response.status === 200)
       {
-        alert('Empleado Creado')
+        alert('Detalle Aplicacion Creado')
         this.actualizar()
       }
     else if (response.status === 666)
@@ -161,7 +161,7 @@ app()
      }).then((response) => {
       if(response.status === 200)
       {
-        alert('Empleado Actualizado')
+        alert('Detalle Aplicacion Actualizado')
         this.actualizar()
       }
     else if (response.status === 666)
@@ -188,7 +188,7 @@ app()
        }).then((response) => {
         if(response.status === 200)
         {
-          alert('Certificado Eliminado')
+          alert('Detalle Aplicacion Eliminado')
           this.actualizar()
         }
       else if (response.status === 666)

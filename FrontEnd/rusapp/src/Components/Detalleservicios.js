@@ -187,7 +187,7 @@ app()
      }).then((response) => {
       if(response.status === 200)
       {
-        alert('Empleado Creado')
+        alert('Detalle Servicio Creado')
         this.actualizar()
       }
     else if (response.status === 666)
@@ -213,7 +213,7 @@ app()
      }).then((response) => {
       if(response.status === 200)
       {
-        alert('Empleado Actualizado')
+        alert('Detalle Servicio Actualizado')
         this.actualizar()
       }
     else if (response.status === 666)
@@ -240,7 +240,7 @@ app()
        }).then((response) => {
         if(response.status === 200)
         {
-          alert('Certificado Eliminado')
+          alert('Detalle Servicio Eliminado')
           this.actualizar()
         }
       else if (response.status === 666)
